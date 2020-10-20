@@ -35,14 +35,17 @@ def AnalyzeImage(imgToCheck):
          json.dump(response.json(), write_file, indent=2)
          
     if len(jsonResponse["results"]) != 0:
-        print("not empty")
-        #TODO: prepare object for sending to server
-        AuthorizeVehicle()
+        trimmedResponse = {}
+        trimmedResponse["plate"] = jsonResponse['results'][0]['plate']
+        trimmedResponse["make"] = jsonResponse['vehicles'][0]['details']['make'][0]['name']
+        trimmedResponse["image"] = jsonResponse['image_bytes']
+        print(trimmedResponse)
+        AuthorizeVehicle(trimmedResponse)
 
 
 # Sends the results to our web server for authorization.
 # If there is a match in the db, the vehicle is authorized.
-def AuthorizeVehicle():
+def AuthorizeVehicle(dataToSend):
     #TODO add POST to web application
     #TO REMOVE, for testing
     redLED.off()
