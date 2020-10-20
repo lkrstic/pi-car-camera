@@ -46,7 +46,9 @@ def AnalyzeImage(imgToCheck):
 # Sends the results to our web server for authorization.
 # If there is a match in the db, the vehicle is authorized.
 def AuthorizeVehicle(dataToSend):
-    #TODO add POST to web application
+    url = 'https://my-python-project.azurewebsites.net/image/save'
+    response = requests.post(url, data = dataToSend)
+    #TODO add handling for response
     #TO REMOVE, for testing
     redLED.off()
     greenLED.on()
