@@ -2,6 +2,7 @@ from gpiozero import Button, LED
 from signal import pause
 from picamera import PiCamera
 from datetime import datetime
+from time import sleep
 import requests
 import base64
 import json
@@ -11,14 +12,9 @@ import secretkey
 # and passes it to AnalyzeImage()
 def CaptureImage():
     imgName = datetime.now().isoformat() + '.jpg'
-    
     print(imgName)
     camera.capture('%s' % imgName)
     AnalyzeImage(imgName)
-    
-    #TO REMOVE, for testing
-    redLED.off()
-    greenLED.on()
 
 # Sends the image to OpenALPR for analysis.
 # If it contains a license plate and vehicle, call AuthorizeVehicle()
@@ -40,13 +36,19 @@ def AnalyzeImage(imgToCheck):
     if len(jsonResponse["results"]) != 0:
         print("not empty")
         #TODO: prepare object for sending to server
+        AuthorizeVehicle()
 
 
 # Sends the results to our web server for authorization.
 # If there is a match in the db, the vehicle is authorized.
 def AuthorizeVehicle():
     #TODO add POST to web application
-    pass
+    #TO REMOVE, for testing
+    redLED.off()
+    greenLED.on()
+    sleep(5)
+    greenLED.off()
+    redLED.on()
 
 def Cleanup():
     pass
