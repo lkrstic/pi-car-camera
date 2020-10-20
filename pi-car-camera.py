@@ -19,10 +19,11 @@ def CaptureImage():
 # Sends the image to OpenALPR for analysis.
 # If it contains a license plate and vehicle, call AuthorizeVehicle()
 def AnalyzeImage(imgToCheck):
-    print(imgToCheck)
     #TO REMOVE, test image
+    print(imgToCheck)
     imgToCheck = 'cartest.jpg'
     print(imgToCheck)
+    
     ALPRurl = 'https://api.openalpr.com/v3/recognize_bytes?recognize_vehicle=1&country=us&return_image=1&secret_key=%s' % (secretkey.SECRET_KEY)
     # ALPRurl = 'https://api.openalpr.com/v3/recognize_bytes?country=us&secret_key=%s' % (SECRET_KEY)
     with open(imgToCheck, 'rb') as imgFile:
@@ -52,7 +53,7 @@ def AuthorizeVehicle():
 
 def Cleanup():
     pass
-    #TODO: cleanup
+    #TODO: delete img and JSON files after they've been handled
 
 
 # initialize hardware
