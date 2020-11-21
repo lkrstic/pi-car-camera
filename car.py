@@ -19,12 +19,3 @@ class Car:
             return True
         else:
             return False
-        
-    
-# # Sends the results to our web server for authorization.
-# # If there is a match in the db, the vehicle is authorized.
-# def AuthorizeVehicle(dataToSend):
-#     url = 'https://my-python-project.azurewebsites.net/image/save'
-#     response = requests.post(url, data = dataToSend)
-#     #TODO add handling for response
-#     print(json.dumps(response.json(), indent=2))

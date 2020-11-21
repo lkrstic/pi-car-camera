@@ -32,34 +32,3 @@ class Image:
             print('no car')
             car = False
         return car
-
-
-#     with open('ResponseALPR.json', 'w') as write_file:
-#          json.dump(response.json(), write_file, indent=2)
-
-#     if len(jsonResponse["results"]) != 0:
-#         trimmedResponse = {}
-#         trimmedResponse["plate"] = jsonResponse['results'][0]['plate']
-#         trimmedResponse["make"] = jsonResponse['vehicles'][0]['details']['make'][0]['name']
-#         trimmedResponse["image"] = jsonResponse['image_bytes']
-#         print(trimmedResponse)
-#         AuthorizeVehicle(trimmedResponse)
-
-
-# # Sends the results to our web server for authorization.
-# # If there is a match in the db, the vehicle is authorized.
-# def AuthorizeVehicle(dataToSend):
-#     url = 'https://my-python-project.azurewebsites.net/image/save'
-#     response = requests.post(url, data = dataToSend)
-#     #TODO add handling for response
-#     print(json.dumps(response.json(), indent=2))
-
-
-            
-#img = Image('cartest.jpg')
-#img.check_for_car()
-
-
-# img.encode_image()
-# with open("testencoded.txt", "wb") as file:
-#     file.write(img.encoded)
