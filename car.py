@@ -1,6 +1,7 @@
 import requests
 import json
 
+# Contains API URLs and secret keys
 import keys
 
 
@@ -13,8 +14,8 @@ class Car:
         
     def is_authorized(self):
         response = requests.post(keys.API_URL, data = self.__dict__)
-        #TODO add handling for response
         auth_json = response.json()
+        print('authorized: ' + auth_json['authorized'])
         if auth_json['authorized'] == 'yes':
             return True
         else:

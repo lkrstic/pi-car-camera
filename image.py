@@ -2,7 +2,7 @@ from base64 import b64encode
 import requests
 import json
 
-# Contains API URLs and secret key
+# Contains API URLs and secret keys
 import keys
 
 
@@ -32,3 +32,7 @@ class Image:
             print('no car')
             car = False
         return car
+    
+    def delete(self):
+        #TODO: add cleanup to delete images after processing
+        pass
