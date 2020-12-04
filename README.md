@@ -1,6 +1,6 @@
 # Automated Vehicle Authorization
 
-The project is a prototype for an IoT system that can automatically detect and approaching vehicle, analyze its specs, and determine whether it matches those stored in the database.
+The project is a prototype for an IoT system that can automatically detect an approaching vehicle, analyze its specs, and determine whether it matches those stored in the database.
 
 *Raspberry Pi*
 
