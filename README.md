@@ -12,3 +12,8 @@ The starting point is **monitor.py** where the hardware is initialized with the 
 
 The web interface can be seen at http://cardetectioncen.web.app/
 This site allows a user to signup, login, and see previously detected vehicles. The user can view the details as well as allowing previously unauthorized vehicles to become authorized.
+
+*Server*
+
+The server code is written in Node.js. It processes images and stores them in the database; it also stores status information about the cars. The server supports 4 Apis calls with 4 different routes : images/save/, images/show/, authorize/save, authorize/show ect...
+
